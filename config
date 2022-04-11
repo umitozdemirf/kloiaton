@@ -1,0 +1,30 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1EUXhNVEV4TXprd09Gb1hEVE15TURRd09ERXhNemt3T0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS3V0CkQ1OW9CUTREbWkxM0k5RUJhT05XSW0yb2d1Zk9TOVFNS21DYjVZbzhpUEZQVHhkOTlBWnRsa1BrVlByZzJYeE8KRG1tRjZKN01RTEVEdzcwcjAxL3BFSWZDazMySlE1NlcxWGZrNUxXei9kMFZFenhKOFlQV3E5dFhBVHUxQ1BYQwp5bFIzKytJbmlPcngxN0VLMS9BZmltN3kxcWY1d3EzWTNZZFllMzhqamgxdUpSd3Jtb2xQS25nMngvUjFZYUw4ClJFbVVzMHdIak1TcnBZTzl1RHBMTWp1KzFQUTlnekFDL3ZGaEFEbnFnT056dTFpeVQxaFRqdUhPWWFNanMxalgKNTJqeUFwcm9PYkJ3ZTFmbW9xY3MwdnFtSEJ4dEVJZ1JzK0hxUThhRG81VDl3YnVSMHI3ckpTcDl4MnUvWEk4TgpUVXIwcnZYWkVoYXpaUUJBeUQwQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZBR21hMTlWVlR1ZzFENGtad2p0UlowcFJvcGpNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDY1h6L3l6NFI1d29oN1hrVWQ1VytiRFNoaEttcVJhSWRlNERId2pQNzlGV0kxaVlTcgpnUHUwQmlRdmdMNUoxSkRDOWlscVFvQjVUN2xmY1pMNHpySHZMTWJ1K3dsOHI3RWk5djdDNThtY29JdnFTanVRCmNVWmlSdlJlck9JNFo0N2c3SW05dWNQS0NRY1BFK0grdVVBTHBMOUpKTUVUL252cFRiUVVnTTR5R2h3MktaTXQKU3NOMzROSGR1Y25MK2lWUXJsajBrYjZCWUVadmFtc2ZWNm51Y1ZIQjF5blBOVnNsRzNWUEl5enZkWG1QZ0k3TQpQYzgwaHQySlVvVlpGRG53NjNmTlgvTWZIaFB0b2NJdzlYWnBaTXdRckIyM3VlUUs5RG9US0hOZFNqU2JnQmVxCld1alh4bEpEejFaRHhoWjdvMWZvaThpbjkrb25VWnF1a3RsNwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://F65C2EB068928D0AF7CB5BE32B91C86C.gr7.eu-central-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+    user: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+  name: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+current-context: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-central-1:417732881703:cluster/hackaton-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-central-1
+      - eks
+      - get-token
+      - --cluster-name
+      - hackaton-cluster
+      command: aws
+      env:
+      - name: AWS_PROFILE
+        value: kloia
